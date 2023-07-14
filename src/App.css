@@ -1,0 +1,286 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* CSS */
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+}
+.subtitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+  color: rgba(38, 42, 46, 0.7);
+}
+.pages-wrap {
+  padding: 75px 0;
+}
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  width: 100%;
+}
+.form-control:focus {
+  box-shadow: none;
+  outline-color: #279671;
+}
+
+.search-box  {
+  max-width: 320px;
+  width: 100%;
+}
+.users-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+.detail-col {
+  max-width: 50%;
+  flex: 0 0 50%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+}
+.detail-col .user-card {
+  height: auto !important;
+  margin-bottom: 20px;
+}
+.user-col {
+  max-width: 33.333%;
+  flex: 0 0 33.333%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+  margin-bottom: 25px;
+}
+
+.user-card {
+  position: relative;
+  padding: 15px;
+  box-shadow: 0 0.375rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  height: 100%;
+  border: 2px solid transparent;
+  transition: 0.3s all ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+.user-card span {
+  font-size: 14px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 10px;
+  color: rgba(38, 42, 46, 0.7);
+}
+.user-card p {
+  margin-bottom: 15px;
+}
+
+.primary-btn {
+  border: none;
+  background-color: #279671;
+  padding: 7px 20px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  width: 100%;
+}
+.primary-btn:hover {
+  background-color: #10674a;
+}
+
+.user-card .primary-btn {
+  width: 100%;
+  margin-top: auto;
+}
+
+.user-card:hover {
+  border-color: #279671;
+}
+
+.edit-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 4px 10px;
+  border: 1px solid #279671;
+  border-radius: 3px;
+  line-height: 12px;
+  transition: 0.35s all ease;
+}
+
+.edit-btn:hover {
+  background-color: #279671;
+  color: #fff;
+}
+
+
+.search-wrap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  max-width: 50%;
+  flex: 0 0 50%;
+}
+
+.search-wrap .primary-btn {
+  max-width: 150px;
+}
+
+
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: 4px;
+  max-width: 700px;
+  padding: 20px;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  text-align: right;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+}
+
+
+
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.edit-form .form-group {
+  max-width: 50%;
+  flex: 0 0 50%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
