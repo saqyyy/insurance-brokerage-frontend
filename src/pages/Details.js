@@ -67,11 +67,11 @@ const Details = () => {
   }
 
   const policyChangeHandler = (e) => {
-    const {inputId, value} = e.target;
+    const {id, value} = e.target;
     setCurrentPolicy(prev => {
       return {
       ...prev,
-      [inputId]: value
+      [id]: value
     }});
   } 
 
