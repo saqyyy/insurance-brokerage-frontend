@@ -1,14 +1,22 @@
+import { getUserById } from "./getUsers";
+import {URL}  from '../config';
 
-export default async function addPolicy (payload) {
+
+export default async function addPolicy (payloadArg, clientId) {
   try{
-    const response= await fetch(`http://127.0.0.1:8000//clients/policy`,   
+    const payload = {
+      client_id : clientId,
+      ...payloadArg
+    };
+    
+    const response= await fetch(`${URL}/policy`,   
       {
         method: 'POST',
         body: JSON.stringify(payload),
-        headers: {'content-type': 'application/json'}
+        headers: {'content-type': 'application/json'},
       })
       if (!response.ok) throw new Error('something went wrong');
-      return await response.json();
+      return await getUserById(clientId);
   } catch (e) {
     console.log(e);
   }

@@ -53,9 +53,19 @@ const Details = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (!currentPolicy.id) {
-      await addPolicy(currentPolicy);
+      const {data} = await addPolicy(currentPolicy, id);
+      const pol = data[0].policies;
+      const defPol = pol.filter(p => p.policy_type === 'default');
+      const premPol = pol.filter(p => p.policy_type === 'premium');
+      setDefPolicies(defPol);
+      setPremPolicies(premPol);
     } else {
-      await editPolicy(currentPolicy);
+      const {data} = await editPolicy(currentPolicy, id);
+      const pol = data[0].policies;
+      const defPol = pol.filter(p => p.policy_type === 'default');
+      const premPol = pol.filter(p => p.policy_type === 'premium');
+      setDefPolicies(defPol);
+      setPremPolicies(premPol);
     }
     setCurrentPolicy(initState);
     setIsOpen(false);

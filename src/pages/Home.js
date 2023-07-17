@@ -25,8 +25,8 @@ const Home = () => {
               {users.length > 0 && 
                 users.map((user) => {
                   return (
-                    <div className='user-col'>
-                      <UserCard key={user.id} userData={user} />
+                    <div key={user.id} className='user-col'>
+                      <UserCard userData={user} />
                     </div>
                   )
                 })
